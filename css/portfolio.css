@@ -1,0 +1,73 @@
+/* ─────────────────────────────────────────
+   portfolio.css — sección "Portfolio"
+───────────────────────────────────────── */
+#portfolio {
+  background: var(--surface);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow), filter var(--t-slow);
+  filter: brightness(.7);
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.07);
+  filter: brightness(.4);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+}
+
+.portfolio-card-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--white);
+  letter-spacing: .05em;
+  transform: translateY(8px);
+  transition: transform var(--t-base);
+}
+
+.portfolio-card-cat {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  color: var(--accent);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--t-base) .05s, transform var(--t-base) .05s;
+}
+
+.portfolio-card:hover .portfolio-card-title {
+  transform: translateY(0);
+}
+
+.portfolio-card:hover .portfolio-card-cat {
+  opacity: 1;
+  transform: translateY(0);
+}

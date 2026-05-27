@@ -1,0 +1,27 @@
+/* ─────────────────────────────────────────
+   variables.css — tokens de diseño globales
+───────────────────────────────────────── */
+:root {
+  /* Colors */
+  --bg:       #0a0c0f;
+  --surface:  #111418;
+  --accent:   #00c8ff;
+  --accent2:  #0af;
+  --text:     #d8dde6;
+  --muted:    #6b7280;
+  --white:    #ffffff;
+
+  /* Layout */
+  --nav-h:    56px;
+  --pad-x:    8vw;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --font-mono:    'Share Tech Mono', monospace;
+
+  /* Transitions */
+  --t-fast:   .2s ease;
+  --t-base:   .3s ease;
+  --t-slow:   .5s ease;
+}

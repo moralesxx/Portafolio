@@ -1,0 +1,77 @@
+/* ─────────────────────────────────────────
+   about.css — sección "About"
+───────────────────────────────────────── */
+#about {
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -80px;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,200,255,.07), transparent 70%);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Foto */
+.about-photo-wrap {
+  position: relative;
+}
+
+.about-photo-wrap img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1);
+}
+
+.about-photo-frame {
+  position: absolute;
+  top: -16px; left: -16px;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  border: 1px solid var(--accent);
+  opacity: .35;
+  pointer-events: none;
+}
+
+/* Texto */
+.about-email {
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.about-bio {
+  font-size: .95rem;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.about-location {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.about-location strong {
+  display: block;
+  color: var(--text);
+}

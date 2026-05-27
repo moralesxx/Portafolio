@@ -1,0 +1,46 @@
+/* ─────────────────────────────────────────
+   responsive.css — media queries
+───────────────────────────────────────── */
+
+/* ── Tablet ── */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo-wrap {
+    display: none;        /* oculta la foto en pantallas medianas */
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  :root {
+    --pad-x: 5vw;
+  }
+
+  nav {
+    padding: 0 1.2rem;
+  }
+
+  section {
+    padding: 5rem var(--pad-x);
+  }
+
+  .hero-name-last {
+    font-size: clamp(3.5rem, 18vw, 6rem);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

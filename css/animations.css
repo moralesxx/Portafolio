@@ -1,0 +1,36 @@
+/* ─────────────────────────────────────────
+   animations.css — keyframes y clases de reveal
+───────────────────────────────────────── */
+
+/* Entrada desde abajo */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Crecimiento de barras de skill */
+@keyframes barGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Pulso en el indicador de scroll */
+@keyframes scrollPulse {
+  0%, 100% { opacity: .3; }
+  50%       { opacity: 1;  }
+}
+
+/* ── Reveal on scroll ──
+   Los elementos empiezan ocultos.
+   JS añade .visible cuando entran en el viewport.
+─────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

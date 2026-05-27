@@ -1,0 +1,192 @@
+/* ─────────────────────────────────────────
+   resume.css — sección "Resume"
+───────────────────────────────────────── */
+#resume {
+  background: var(--bg);
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 4rem;
+}
+
+/* ── Skills ── */
+.skill-group {
+  margin-bottom: 2.5rem;
+}
+
+.skill-group-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: .1em;
+  margin-bottom: 1.2rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.skill-item {
+  margin-bottom: .9rem;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .82rem;
+  color: var(--text);
+  margin-bottom: .3rem;
+}
+
+.skill-bar {
+  height: 2px;
+  background: rgba(255,255,255,.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  width: var(--w);           /* valor pasado inline desde HTML */
+  background: linear-gradient(90deg, var(--accent), rgba(0,170,255,.5));
+  border-radius: 2px;
+  transform-origin: left;
+  animation: barGrow .9s ease both;
+}
+
+.personal-skills-text {
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+/* ── Timeline (experiencia) ── */
+.exp-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: .1em;
+  margin-bottom: 1.5rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 16px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.tl-dot {
+  position: absolute;
+  left: -2.55rem;
+  top: .35rem;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+
+.tl-date {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  color: var(--accent);
+  letter-spacing: .1em;
+  margin-bottom: .2rem;
+}
+
+.tl-company {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.tl-role {
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+/* ── Educación ── */
+.edu-block {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.edu-school {
+  margin-top: .2rem;
+}
+
+/* ── Columna derecha ── */
+.what-section {
+  margin-bottom: 2.5rem;
+}
+
+.what-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: .1em;
+  margin-bottom: .8rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.what-list {
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.what-list li::before {
+  content: '— ';
+  color: var(--accent);
+}
+
+/* Hobbies */
+.hobbies-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: .8rem;
+}
+
+.hobby-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  font-size: .7rem;
+  color: var(--muted);
+  letter-spacing: .08em;
+}
+
+.hobby-icon .icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,200,255,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  background: rgba(0,200,255,.04);
+  transition: background var(--t-base), border-color var(--t-base);
+}
+
+.hobby-icon:hover .icon {
+  background: rgba(0,200,255,.15);
+  border-color: var(--accent);
+}
