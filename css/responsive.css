@@ -1,26 +1,68 @@
 /* ─────────────────────────────────────────
-   responsive.css — media queries
+    responsive.css — Maquetación y Media Queries
 ───────────────────────────────────────── */
 
-/* ── Tablet ── */
-@media (max-width: 900px) {
+/* ── Ajuste Global para Pantallas Grandes (Escritorio) ── 
+   Esto evita que el contenido se estire de forma infinita en monitores anchos */
+   .about-grid,
+   .resume-grid,
+   .portfolio-grid,
+   .what-section {
+     max-width: 1200px; /* Limita el ancho máximo del contenido */
+     margin-left: auto;
+     margin-right: auto;
+     width: 100%;
+   }
+   
+   /* Asegura que la cuadrícula de la sección Resume tenga un límite y dos columnas balanceadas */
+   .resume-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 4rem;
+   }
+
+/* ── Tablet / Pantallas Medianas (max-width: 1024px) ── */
+@media (max-width: 1024px) {
   .about-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1.2fr 1fr; /* Mantiene la foto pero ajusta proporciones */
+    gap: 3rem;
   }
-
-  .about-photo-wrap {
-    display: none;        /* oculta la foto en pantallas medianas */
-  }
-
+  
   .resume-grid {
-    grid-template-columns: 1fr;
+    gap: 2.5rem; /* Reduce el espacio entre columnas de habilidades y experiencia */
   }
 }
 
-/* ── Mobile ── */
+/* ── Tablet Vertical (max-width: 900px) ── */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Todo pasa a una sola columna */
+    text-align: center;
+  }
+
+  .about-photo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    order: -1; /* Opcional: Coloca la foto arriba del texto en móviles/tablets */
+  }
+  
+  .about-photo-wrap img {
+    max-width: 320px; /* Controla que la foto no se vuelva gigante en tablets */
+    width: 100%;
+    height: auto;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr; /* Habilidades arriba, experiencia abajo */
+    gap: 3rem;
+  }
+}
+
+/* ── Mobile (max-width: 600px) ── */
 @media (max-width: 600px) {
   :root {
-    --pad-x: 5vw;
+    --pad-x: 6vw;
   }
 
   nav {
@@ -28,11 +70,16 @@
   }
 
   section {
-    padding: 5rem var(--pad-x);
+    padding: 4rem var(--pad-x);
   }
 
   .hero-name-last {
-    font-size: clamp(3.5rem, 18vw, 6rem);
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  /* Ajuste para las barras de progreso y listas en móviles */
+  .resume-grid {
+    padding: 0 0.5rem;
   }
 
   .portfolio-grid {
@@ -42,5 +89,6 @@
   footer {
     flex-direction: column;
     text-align: center;
+    gap: 1rem;
   }
 }
